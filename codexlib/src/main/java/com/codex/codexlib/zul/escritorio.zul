@@ -1,0 +1,77 @@
+<?page title="Escritorio" contentType="text/html;charset=UTF-8"?>
+<zk>
+  <window id="winEscritorio" border="normal" apply="${escritorioCnt}" sizable="true" maximizable="false" minimizable="false" closable="false" width="100%" height="100%" hflex="1" vflex="1">
+  	<borderlayout>
+          <west splittable="true" size="23%" collapsible="true" minsize="300" border="none">
+		
+        	<tree vflex="1" height="100%" width="100%" id="trFileSystem" multiple="false" checkmark="true" >
+				<treecols sizable="true">
+					<treecol width="100%">
+						
+							<hbox width="100%" sclass="columna-arbol">
+								<div width="100%" align="left">
+									<bandbox id="buscarDirectorio" mold="rounded" autodrop="false" tooltiptext="${labels.codex.buscar.directorio}" width="130px">
+				
+									</bandbox>
+								</div>
+								<div width="100%" align="right">
+								<menubar id="mbMenu" width="150px" sclass="menuSecundario">
+										<menu id="menuEntidad" image="img/iconos/entidadIconp.png" sclass="menuDesplegable">
+										 <menupopup sclass="contenedorItems">
+										  <menuitem id="iteCrearE" value="form.1016"></menuitem>
+										  <menuitem id="iteEditarE" value="form.1020"></menuitem>
+										  <menuitem id="iteEliminarE" value="form.1021"></menuitem>
+										 </menupopup>
+										</menu>
+										<menu id="menuDependencia" sclass="menuDesplegable">
+											<menupopup sclass="contenedorItems">
+											  <menuitem id="iteCrearD" value="form.1017"></menuitem>
+											  <menuitem id="iteEditarD" value="form.1022"></menuitem>
+											  <menuitem id="iteEliminarD" value="form.1023"></menuitem>
+											</menupopup>
+										</menu>
+										<menu id="menuDirectorio" sclass="menuDesplegable">
+											<menupopup sclass="contenedorItems">
+												<menuitem id="iteCrearDi" value="form.1018"></menuitem>
+												<menuitem id="iteEditarDi" value="form.1024"></menuitem>
+												<menuitem id="iteEliminarDi" value="form.1025"></menuitem>
+											</menupopup>
+										</menu>
+										
+								</menubar>
+<!-- 								<toolbarbutton id="btnCrearEntidad"> -->
+<!-- 										<custom-attributes formulario="form.1016"/> -->
+<!-- 									</toolbarbutton> -->
+<!-- 									<toolbarbutton id="btnCrearDependencia"> -->
+<!-- 										<custom-attributes formulario="form.1017"/> -->
+<!-- 									</toolbarbutton> -->
+<!-- 									<toolbarbutton id="btnNuevoDirectorio"> -->
+<!-- 										<custom-attributes formulario="form.1018"/> -->
+<!-- 									</toolbarbutton> -->
+<!-- 									<toolbarbutton id="btnEditarDirectorio"> -->
+<!-- 										<custom-attributes formulario="form.1011"/> -->
+<!-- 									</toolbarbutton> -->
+<!-- 									<toolbarbutton id="btnEliminarDirectorio"> -->
+<!-- 										<custom-attributes formulario="form.1012"/> -->
+<!-- 									</toolbarbutton> -->
+									
+								</div>
+							</hbox>
+						
+					</treecol >
+					
+					
+				</treecols>
+            </tree>
+				
+   </west>
+    
+ <center border="none">    	 
+    	 <div id="divTrabajo" hflex="1" vflex="1" sclass="areaTrabajo"/> 		
+ </center>
+  	</borderlayout>
+  	<menupopup id="menuArchivo">
+  		
+  	</menupopup>
+  </window>
+</zk>
