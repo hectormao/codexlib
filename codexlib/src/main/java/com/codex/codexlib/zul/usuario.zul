@@ -79,7 +79,7 @@
 				<tabpanels>
 					<tabpanel>
 						<listbox id="lstRolesUsuario" multiple="true"
-							checkmark="true" rows="3" vflex="true" width="635px">
+							checkmark="true" rows="3" width="645px">
 							<listhead sizable="true">
 								<!-- 				CHECKBOX -->
 								<listheader width="25px">
@@ -92,7 +92,7 @@
 									</label>
 								</listheader>
 								<!-- 				DESCRIPCION ROL -->
-								<listheader width="230px">
+								<listheader width="350px">
 									<label
 										value="${labels.app.descripcionRol}">
 									</label>
@@ -113,7 +113,7 @@
 									<!-- 				NOMBRE Empresa -->
 									<listheader>
 										<label
-											value="${labels.app.nombreEmpresa}">
+											value="${labels.codex.empresaDisponible}">
 										</label>
 									</listheader>
 								</listhead>
@@ -133,7 +133,7 @@
 									<!-- 				NOMBRE Empresa -->
 									<listheader>
 										<label
-											value="${labels.app.nombreEmpresa}">
+											value="${labels.codex.empresaSeleccionada}">
 										</label>
 									</listheader>
 								</listhead>

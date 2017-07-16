@@ -881,7 +881,7 @@ public class SistemaArchivoDAO extends PltDAO{
 		return lista;
 	}
 	
-	public List<DocSerieDoc> getSeriesDocumentales(){
+	public List<DocSerieDoc> getSeriesDocumentales(DocSistArch padre){
 		Session session = super.getSessionFactory().getCurrentSession();
 		Transaction tx = session.getTransaction();
 		List<DocSerieDoc> lista = new ArrayList<DocSerieDoc>();
@@ -892,7 +892,7 @@ public class SistemaArchivoDAO extends PltDAO{
 			StringBuilder hql = new StringBuilder();
 			hql.append("select o from ");
 			hql.append(DocSerieDoc.class.getName()).append(" as o");
-			hql.append(" where o.audiSiAnul = ").append(false);
+			hql.append(" where o.serieDocIdn in (select ser.docSerieDoc from " + DocSerieSist.class.getName() + " ser where ser.docSistArch.sistArchIdn = " + padre.getSistArchIdn() + " ) and o.audiSiAnul = ").append(false);
 			Query query = session.createQuery(hql.toString());
 			lista = query.list();
 		} catch (Exception e) {

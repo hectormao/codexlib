@@ -507,13 +507,13 @@ public class SistemaArchivoNgcImpl implements SistemaArchivoNgc{
 
 
 	@Override
-	public List<DocSerieDoc> getSeriesDocumentales() {
-		return sistemaArchivoDAO.getSeriesDocumentales();
+	public List<DocSerieDoc> getSeriesDocumentales(DocSistArch padre) {
+		return sistemaArchivoDAO.getSeriesDocumentales(padre);
 	}
 
 
 	@Override
-	public void RegistrarSeriesSistema(DocSerieSist docSerieSist) {
+	public void registrarSeriesSistema(DocSerieSist docSerieSist) {
 		sistemaArchivoDAO.registrarSeriesSistema(docSerieSist);
 	}
 

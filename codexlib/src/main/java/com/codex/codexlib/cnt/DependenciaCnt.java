@@ -125,7 +125,7 @@ public class DependenciaCnt extends WindowComposer{
 			
 		   
 		  
-			cargarSeriesDocumentales();
+			cargarSeriesDocumentales(directorioPadre);
 			cargarArbolPermisos();
 		} catch(PltException ex){
 			Events.sendEvent(Events.ON_CLOSE, this.self, null);
@@ -135,10 +135,10 @@ public class DependenciaCnt extends WindowComposer{
 		
 	}
 	
-	private void cargarSeriesDocumentales(){
+	private void cargarSeriesDocumentales(DocSistArch padre){
 		
-		List<DocSerieDoc> lista = new ArrayList<DocSerieDoc>();
-		lista = sistemaArchivoNgc.getSeriesDocumentales();
+		List<DocSerieDoc> lista;
+		lista = sistemaArchivoNgc.getSeriesDocumentales(padre);
 		listaSeries = new ArrayList<DocSerieSist>();
 		if(isEditar || isBorrar){
 		listaSeries = sistemaArchivoNgc.getSeriesSisEditar(directorio.getSistArchIdn());
@@ -451,7 +451,7 @@ public class DependenciaCnt extends WindowComposer{
 					docSerieSist.setAudiUsuario(usuario.getLogin());
 					docSerieSist.setAudiFechModi(new Date());
 					docSerieSist.setAudiSiAnul(false);
-					sistemaArchivoNgc.RegistrarSeriesSistema(docSerieSist);
+					sistemaArchivoNgc.registrarSeriesSistema(docSerieSist);
 				}
 			}
 		} 
@@ -466,7 +466,7 @@ public class DependenciaCnt extends WindowComposer{
 					docSerieSist.setAudiUsuario(usuario.getLogin());
 					docSerieSist.setAudiFechModi(new Date());
 					docSerieSist.setAudiSiAnul(false);
-					sistemaArchivoNgc.RegistrarSeriesSistema(docSerieSist);
+					sistemaArchivoNgc.registrarSeriesSistema(docSerieSist);
 				}
 			}
 		}

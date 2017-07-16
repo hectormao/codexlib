@@ -217,12 +217,12 @@ public interface SistemaArchivoNgc {
 	 * archivos con series
 	 * @return
 	 */
-	public List<DocSerieDoc> getSeriesDocumentales();
+	public List<DocSerieDoc> getSeriesDocumentales(DocSistArch padre);
 	/**
 	 * metodo que registra las relaciones entre series y sistemas de archivos
 	 * @param docSerieSist
 	 */
-	public void RegistrarSeriesSistema(DocSerieSist docSerieSist);
+	public void registrarSeriesSistema(DocSerieSist docSerieSist);
 	/**
 	 * metodo para obtener los permisos y rol a ser editados
 	 */
